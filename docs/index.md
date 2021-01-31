@@ -1,3 +1,5 @@
+![](./chat_system_poster.png)
+
 ## What is Jovial Chat System?
 
 Jovial Chat System is a **Messaging system** to bring in revolutionary scalability, reliability and Hardware/Network Failure resistance.
