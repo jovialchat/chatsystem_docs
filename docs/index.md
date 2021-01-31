@@ -2,9 +2,9 @@
 
 Jovial Chat System is a **Messaging system** to bring in revolutionary scalability, reliability and Hardware/Network Failure resistance.
 
-This project is meant to allow hosting this messaging system and allow a variety of devices to exploit it and never lose a single message.
+This project is meant to allow hosting this messaging system and allow a variety of devices to exploit it and never lose a single message. It follows a strict client identification to ensure secured use of the system.
 
-Jovial Chat system uses combination storage and data flow mechanisms to ensure ACID-compliant delivery of messages but also ensure storage in a master-less system to prevent any bottlenecks in the Message Life Cycle. And thus allow the collection of messages by the receiver**s**.
+Jovial Chat system uses a combination of storage systems and data flow mechanisms to ensure ACID-compliant delivery of messages and also ensure storage in a master-less system to prevent any bottlenecks in the Message Life Cycle. Thus allow the reliable collection of messages by the receiver**s**.
 
 (**yes there can be multiple receivers for the same user with proper load balancing**)
 
@@ -14,9 +14,37 @@ A reliable messaging system can simply creation of a large number of reliable sy
 
 The primary focus of this system is to support a variety of IoT devices and some basic interactive devices/platforms (focusing mainly on the web for now).
 
-Presently a massive number of IoT devices are powered by MQTT, which is lightweight, fast, scalable and supports a variety of devices (ranging from IoT, web browsers, Backend Frameworks & other commonly used systems). But MQTT **lacks** reliability, Hardware & Network Failure resistance and loses functionality in the absence of Network.
+Presently a massive number of IoT devices are powered by MQTT, which is lightweight, fast, scalable and supports a variety of devices (ranging from IoT, web browsers, Backend Frameworks & other commonly used systems). But MQTT **lacks** reliability, Hardware & Network Failure resistance, security and loses functionality in the absence of Network.
 
 Reliability, Hardware & Network Failure resistance is/will be a very important requirement of many applications, therefore while preparing them on existing Messaging platforms, one has to make custom arrangements to resolve the gaps, which is often time-consuming and difficult to design and test.
 
+Since Jovial Chat system has an inherent mechanism to identify and sign users using webtokens, the system can securly verify its clients and thus verify senders, recivers and agent of action
+
 ## How will Jovial Chat System cover the gaps which exist in current messaging transport systems?
+
+Jovial Chat System has well-defined flow message under committed a Message Delivery life cycle, which takes care of following steps:-
+
+  1. Creation
+
+  2. Queuing
+
+  3. Sending
+
+  4. ACID-compliant identity contextualisation
+
+  5. Storage
+
+  6. Monitoring
+
+  7. Retrieval
+
+  8. Collection and Storage
+
+  9. `on_recive` listeners/triggers
+
+And also possess well-defined mechanisms to identify and respond, in case of any failure or error in the steps above.
+
+The Jovial Chat System will not only ensure reliability in terms of message delivery but also security and verification of users. All client devices will have a webtoken signed with a secret key, this token will allow Servers to identify the clients sending messages and identify clients requesting for messages, which ensure that the messages are delivered only to client devices which are meant to receive them.
+
+
 
