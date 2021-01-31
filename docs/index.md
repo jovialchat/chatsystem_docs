@@ -22,29 +22,19 @@ Since Jovial Chat system has an inherent mechanism to identify and sign users us
 
 ## How will Jovial Chat System cover the gaps which exist in current messaging transport systems?
 
+#### Transport | Local Queuing | Triggers
+
 Jovial Chat System has well-defined flow message under committed a Message Delivery life cycle, which takes care of following steps:-
 
-  1. Creation
-
-  2. Queuing
-
-  3. Sending
-
-  4. ACID-compliant identity contextualisation
-
-  5. Storage
-
-  6. Monitoring
-
-  7. Retrieval
-
-  8. Collection and Storage
-
-  9. `on_recive` listeners/triggers
+**`Creation`** 🡆 **`Queuing`** 🡆 **`Sending`** 🡆 **`ACID-compliant identity contextualisation`** 🡆 **`Storage`** 🡆  **`Monitoring`** 🡆 **`Retrieval`** 🡆 **`Collection and Storage`** 🡆 **`on_recive ( listeners/triggers )`**
 
 And also possess well-defined mechanisms to identify and respond, in case of any failure or error in the steps above.
 
-The Jovial Chat System will not only ensure reliability in terms of message delivery but also security and verification of users. All client devices will have a webtoken signed with a secret key, this token will allow Servers to identify the clients sending messages and identify clients requesting for messages, which ensure that the messages are delivered only to client devices which are meant to receive them.
+#### Autorization | Verification | DDOS prevention
+
+The Jovial Chat System will not only ensure reliability in terms of message delivery but also security and verification of users. All client devices will have a web token signed with a secret key, this token will allow Servers to identify the clients sending messages and identify clients requesting for messages, which ensure that the messages are delivered only to client devices which are meant to receive them.
+
+This system further performs DDOS prevention measures by identifying abnormal/unwanted traffic and blocking them instantly.
 
 
 
