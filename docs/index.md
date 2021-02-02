@@ -26,9 +26,9 @@ Since Jovial Chat system has an inherent mechanism to identify and sign users us
 
 #### Transport | Local Queuing | Triggers
 
-Jovial Chat System has well-defined flow message under committed a Message Delivery life cycle, which takes care of following steps:-
+Jovial Chat System has well-defined message delivery flow under a committed Message Delivery life cycle, which takes care of following steps:-
 
-**`Creation`** 🡆 **`Queuing`** 🡆 **`Sending`** 🡆 **`ACID-compliant identity contextualisation`** 🡆 **`Storage`** 🡆  **`Monitoring`** 🡆 **`Retrieval`** 🡆 **`Collection and Storage`** 🡆 **`on_recive ( listeners/triggers )`**
+**`Creation`** 🡆 **`Queuing`** 🡆 **`Sending`** 🡆 **`ACID-compliant identity annotation`** 🡆 **`Storage`** 🡆  **`Monitoring`** 🡆 **`Retrieval`** 🡆 **`Collection and Storage`** 🡆 **`on_recive ( listeners/triggers )`**
 
 And also possess well-defined mechanisms to identify and respond, in case of any failure or error in the steps above.
 
