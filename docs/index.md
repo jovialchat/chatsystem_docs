@@ -42,7 +42,7 @@ This system further performs DDOS prevention measures by identifying abnormal/un
 
 Post Office Model is a blueprint which represents all the operations which will be performed by the finished project, in a very simple language, with a very limited technical aspect.
 
-I Post office model we can idea of a system if there are NO COMPUTER & operations must be 100% manual. 
+In a Post office model we can represent an idea of a system designed to function if there are NO COMPUTERS, where operations must be 100% manual. 
 Doing so, allows us to make the best solution in a very detailed use case. And thus prepare testable codes later.
 
 *We call it Post Office Model, because the Post offices (postal services) can function perfectly without any computer or networking gadget, simply by following a unified system, so if we have to make an e_post_office we can do that project with a 2 centuries old proven action plan*
