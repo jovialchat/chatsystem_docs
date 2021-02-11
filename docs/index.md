@@ -20,7 +20,7 @@ Presently a massive number of IoT devices are powered by MQTT, which is lightwei
 
 Reliability, Hardware & Network Failure resistance is/will be a very important requirement of many applications, therefore while preparing them on existing Messaging platforms, one has to make custom arrangements to resolve the gaps, which is often time-consuming and difficult to design and test.
 
-Since Jovial Chat system has an inherent mechanism to identify and sign users using webtokens, the system can securly verify its clients and thus verify senders, recivers and agent of action
+Since Jovial Chat system has an inherent mechanism to identify and sign users using webtokens, the system can securely verify its clients and thus verify senders, receivers and agent of action
 
 ## How will Jovial Chat System cover the gaps which exist in current messaging transport systems?
 
@@ -38,5 +38,11 @@ The Jovial Chat System will not only ensure reliability in terms of message deli
 
 This system further performs DDOS prevention measures by identifying abnormal/unwanted traffic and blocking them instantly.
 
+## What is Post Office Model?
 
+Post Office Model is a blueprint which represents all the operation which will be performed by the finished project, in a very simple language, with a very limited technical aspect.
 
+I Post office model we can Image if there are NO COMPUTER, operations must be 100% manual. 
+Doing allows us to make the best solution in a very detailed use case. And thus prepare testable codes later.
+
+*We call it Post Office Model, because a Post office a system that can function perfectly without any computer or networking gadget, simply by following a unified system, so if we have to make an e_post_office we can do that project with an easily testable codebase*
