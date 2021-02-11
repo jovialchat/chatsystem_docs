@@ -45,4 +45,4 @@ Post Office Model is a blueprint which represents all the operation which will b
 I Post office model we can Image if there are NO COMPUTER, operations must be 100% manual. 
 Doing allows us to make the best solution in a very detailed use case. And thus prepare testable codes later.
 
-*We call it Post Office Model, because a Post office a system that can function perfectly without any computer or networking gadget, simply by following a unified system, so if we have to make an e_post_office we can do that project with an easily testable codebase*
+*We call it Post Office Model, because a Post office a system that can function perfectly without any computer or networking gadget, simply by following a unified system, so if we have to make an e_post_office we can do that project with an excellent/proven action plan & an easily testable development*
