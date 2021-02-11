@@ -12,7 +12,7 @@ Jovial Chat system uses a combination of storage systems and data flow mechanism
 
 ## Why Jovial Chat System?
 
-A reliable messaging system can simply creation of a large number of reliable systems which require a reliable medium to transport of information over the internet, for connecting numerous devices and users, without any scope of failure.
+A reliable messaging system can simplify creation of a large number of reliable systems which require a reliable medium to transport of information over the internet, for connecting numerous devices and users, without any scope of failure.
 
 The primary focus of this system is to support a variety of IoT devices and some basic interactive devices/platforms (focusing mainly on the web for now).
 
@@ -40,9 +40,9 @@ This system further performs DDOS prevention measures by identifying abnormal/un
 
 ## What is Post Office Model?
 
-Post Office Model is a blueprint which represents all the operation which will be performed by the finished project, in a very simple language, with a very limited technical aspect.
+Post Office Model is a blueprint which represents all the operations which will be performed by the finished project, in a very simple language, with a very limited technical aspect.
 
-I Post office model we can Image if there are NO COMPUTER, operations must be 100% manual. 
-Doing allows us to make the best solution in a very detailed use case. And thus prepare testable codes later.
+I Post office model we can idea of a system if there are NO COMPUTER & operations must be 100% manual. 
+Doing so, allows us to make the best solution in a very detailed use case. And thus prepare testable codes later.
 
 *We call it Post Office Model, because a Post office a system that can function perfectly without any computer or networking gadget, simply by following a unified system, so if we have to make an e_post_office we can do that project with an excellent/proven action plan & an easily testable development*
