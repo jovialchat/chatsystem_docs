@@ -12,7 +12,7 @@ Jovial Chat system uses a combination of storage systems and data flow mechanism
 
 ## Why Jovial Chat System?
 
-A reliable messaging system can simplify creation of a large number of reliable systems which require a reliable medium to transport of information over the internet, for connecting numerous devices and users, without any scope of failure.
+A reliable messaging system can simplify creation of a large number of reliable systems which require a reliable medium for transport of information over the internet, for connecting numerous devices and users, without any scope of failure.
 
 The primary focus of this system is to support a variety of IoT devices and some basic interactive devices/platforms (focusing mainly on the web for now).
 
