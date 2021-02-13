@@ -27,6 +27,7 @@ In jovial Chat System, we follow a scalable system of microservices.
  
 ## App
 App is an application registered to the Jovial Chat System. All apps have a unique **`app_id`** and a random **`app_secret`**.
+
 **`app_key`** is web token prepared using `app_id` and `app_secret`, signed with a secret key.
 
 ## Client
