@@ -22,4 +22,11 @@ In jovial Chat System we follow a scalable system of microservices.
 
  - MDS client
  - Local MSS
+ - Local Triggers
+ - Clinet Application
+
+### User Management System (UMS)
+### File Store System (FSS)
+### Message Delivery System (MDS)
+### Message Storage System (MSS)
 
