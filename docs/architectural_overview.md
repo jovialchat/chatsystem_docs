@@ -25,6 +25,9 @@ In jovial Chat System we follow a scalable system of microservices.
  - Local Triggers
  - Clinet Application
  
+## App
+App is an application registered to the Jovial Chat System. All apps have an unique **`app_id`** and a random **`app_secret`**.
+**`app_key`** is webtoken prepared using `app_id` and `app_secret`, signed with a secret key.
 
 ## Client
 Client is any physical entity which can send or recive messages using the system.
@@ -35,14 +38,20 @@ A client must have follow attributes:-
 - **`username`** is an unique *string* assigned manually by the client during registration. **(optional)**
 - **`password`** is assigned manually by the client during registration.
 
-
 ## Services
 
 ### User Management System (UMS)
 
-User Management System mircoserive is required for client/user registration, authorization and verification.
+User Management System mircoserive is required for registration, authorization and verification of clients and applications
 
 Jovial Chat System requires secured client identification and verification. To fullfill this UMS allows the client aquire a web token signed with a secret key, this signed token can be used to access other micoservices (such as FSS & MDS).
+
+**UMS must allow following operations**
+
+- Register new Apps to the system and provide app_key
+- Verify App with app_key
+- Register new user to the system
+- User login and provide signed user token
 
 ### File Store System (FSS)
 ### Message Delivery System (MDS)
