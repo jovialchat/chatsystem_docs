@@ -1,5 +1,5 @@
 # Architectural Overview
-In jovial Chat System we follow a scalable system of microservices. 
+In jovial Chat System, we follow a scalable system of microservices. 
 
 ## Components involved
 
@@ -18,33 +18,33 @@ In jovial Chat System we follow a scalable system of microservices.
  - MongoDB Document Database
  - CassandraDB Masterless Database
 
-**Client Side Components**
+**Client-Side Components**
 
  - MDS client
  - Local MSS
  - Local Triggers
- - Clinet Application
+ - client Application
  
 ## App
-App is an application registered to the Jovial Chat System. All apps have an unique **`app_id`** and a random **`app_secret`**.
-**`app_key`** is webtoken prepared using `app_id` and `app_secret`, signed with a secret key.
+App is an application registered to the Jovial Chat System. All apps have a unique **`app_id`** and a random **`app_secret`**.
+**`app_key`** is web token prepared using `app_id` and `app_secret`, signed with a secret key.
 
 ## Client
-Client is any physical entity which can send or recive messages using the system.
+Client is any physical entity which can send or receive messages using the system.
 
-A client must have follow attributes:-
-- **`app_id`** unqiue id of the user's parent app
+A client must have the following attributes:-
+- **`app_id`** unique id of the user's parent app
 - **`user_id`**: uniquely assigned to the user by the chat system and is immutable.
-- **`username`** is an unique *string* assigned manually by the client during registration. **(optional)**
+- **`username`** is a unique *string* assigned manually by the client during registration. **(optional)**
 - **`password`** is assigned manually by the client during registration.
 
 ## Services
 
 ### User Management System (UMS)
 
-User Management System mircoserive is required for registration, authorization and verification of clients and applications
+User Management System microservice is required for registration, authorization and verification of clients and applications
 
-Jovial Chat System requires secured client identification and verification. To fullfill this UMS allows the client aquire a web token signed with a secret key, this signed token can be used to access other micoservices (such as FSS & MDS).
+Jovial Chat System requires secured client identification and verification. To fulfil this UMS allows the client to acquire a web token signed with a secret key, this signed token can be used to access other microservices (such as FSS & MDS).
 
 **UMS must allow following operations**
 
