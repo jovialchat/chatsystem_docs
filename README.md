@@ -1,4 +1,4 @@
-![chat_system_poster](./chat_system_poster.png)
+![chat_system_poster](./docs/chat_system_poster.png)
 
 ## What is Jovial Chat System?
 
