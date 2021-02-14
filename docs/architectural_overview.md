@@ -89,3 +89,11 @@ Message Storage System is component operated by MDS, to store message locally cl
 
  - Store and read messages in **client device**
  - Store and read messages from **Master Less DB**.
+ 
+## Backend Components
+
+### UMS server
+### MDS server
+### FSS server
+### MongoDB Document Database
+### CassandraDB Masterless Database
