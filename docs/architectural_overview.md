@@ -87,5 +87,5 @@ Message Storage System is component operated by MDS, to store message locally cl
 
  **MSS must allow following operations**
 
- - Store and read messages in client device
- - Store and read messages in Master Less DB.
+ - Store and read messages in **client device**
+ - Store and read messages from **Master Less DB**.
