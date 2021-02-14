@@ -49,12 +49,26 @@ Jovial Chat System requires secured client identification and verification. To f
 
 **UMS must allow following operations**
 
-- Register new Apps to the system and provide app_key
-- Verify App with app_key
-- Register new user to the system
-- User login and provide signed user token
+ - Register new Apps to the system and provide app_key
+ - Verify App with app_key
+ - Register new user to the system
+ - User login and provide signed user token
+
 
 ### File Store System (FSS)
+File Store System microservice is built to store and read media files.
+FSS ensures secured access to the files using **`file_token`s**. 
+
+All files in FSS are stored in a Masterless DB as a key-value store. Where the key is uniquely assigned `file_id` and value is the `file_data`.
+
+`file_token` is a web token comprising of following fields **`file_id`, `access` & `mime_type`** signed using a secret key.
+
+**FSS must allow following operations**
+
+ - Upload File and store in masterless DB
+ - Create `file_token` (file access token) 
+ - Read file using `file_token` , where `user_token` is also verifyed and checked if the user has access to a perticular file.
+
 ### Message Delivery System (MDS)
 ### Message Storage System (MSS)
 
