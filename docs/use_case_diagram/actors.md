@@ -18,3 +18,39 @@ A Client Device has the following operations:-
 - **`local storage`**: All messages sent & received by the client device are stored locally.
 
 ### Set of Client Device
+
+A User in a Chat system can utilize multiple devices as a set of Devices.
+This setup is for daemons that require load balancing to sustain messages from a large number of senders.
+
+### Client Device Load Balancing
+
+For Load Balancing on Device Set, we follow Round Robin WRT connection initiation.
+
+For example:-
+
+```js
+//Client Set with client_id: 'abcd88u21noinoin3332'
+client_device1 = {
+   client_id: "abcd88u21noinoin3332",
+   device_id: "sbcd8noinoin33328u21"
+}
+client_device2 = {
+   client_id: "abcd88u21noinoin3332",
+   device_id: "sbcd8noinoin33328u22"
+}
+client_device3 = {
+   client_id: "abcd88u21noinoin3332",
+   device_id: "sbcd8noinoin33324u00"
+}
+
+//Client Device set represented on client document
+client = {
+   client_id: "abcd88u21noinoin3332",
+   devices: [
+      { device_id: "sbcd8noinoin33328u21", state_conncted: false },
+      { device_id: "sbcd8noinoin33328u22", state_conncted: true },
+      { device_id: "sbcd8noinoin33324u00", state_conncted: true },
+   ]
+}
+```
+
