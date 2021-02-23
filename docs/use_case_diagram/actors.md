@@ -28,6 +28,8 @@ For Load Balancing on Device Set, we follow Round Robin WRT connection initiatio
 
 For example:-
 
+##### Devices assigned
+
 ```js
 //Client Set with client_id: 'abcd88u21noinoin3332'
 client_device1 = {
@@ -47,10 +49,57 @@ client_device3 = {
 client = {
    client_id: "abcd88u21noinoin3332",
    devices: [
-      { device_id: "sbcd8noinoin33328u21", state_conncted: false },
-      { device_id: "sbcd8noinoin33328u22", state_conncted: true },
-      { device_id: "sbcd8noinoin33324u00", state_conncted: true },
+      { device_id: "sbcd8noinoin33328u21", state_conncted: false, set_sub_factor: 0 },
+      { device_id: "sbcd8noinoin33328u22", state_conncted: true, set_sub_factor: 1 },
+      { device_id: "sbcd8noinoin33324u00", state_conncted: true, set_sub_factor: 2 },
    ]
 }
 ```
 
+##### Messages sent to the `User`
+
+| message_index | reciver_id | sender_id | data |
+|--|--|--|--|
+| 1 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...400>` |
+| 2 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
+| 3 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...100>` |
+| 4 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...230>` |
+| 5 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...550>` |
+| 6 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
+
+**sender_id**: UserId of message sender
+**reciver_id**: UserId of message reciver
+**message_index**: serial number of message sent to a reciver
+**Primary Key**: (`message_index`+`reciver_id`)
+
+##### Message Received by any client_device
+
+```js
+set_device_count //total number of devices in Client Device set
+set_sub_factor // unqiue sub_factor assigned to a client device
+// 0 <= set_sub_factor < set_device_count 
+
+//Message Index must satisfy
+assert( ( message_index % set_device_count ) === set_sub_factor )
+```
+
+##### `client_device1`'s message table
+
+`set_sub_factor = 0`
+
+| message_index | reciver_id | sender_id | data |
+|--|--|--|--|
+| 3 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...100>` |
+| 6 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
+
+##### `client_device1`'s message table
+| message_index | reciver_id | sender_id | data |
+|--|--|--|--|
+| 1 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...400>` |
+| 4 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...230>` |
+
+##### `client_device1`'s message table
+| message_index | reciver_id | sender_id | data |
+|--|--|--|--|
+| 2 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
+| 5 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...550>` |
