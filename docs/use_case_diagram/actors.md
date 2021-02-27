@@ -49,9 +49,9 @@ client_device3 = {
 client = {
    client_id: "abcd88u21noinoin3332",
    devices: [
-      { device_id: "sbcd8noinoin33328u21", state_conncted: false, set_sub_factor: 0 },
-      { device_id: "sbcd8noinoin33328u22", state_conncted: true, set_sub_factor: 1 },
-      { device_id: "sbcd8noinoin33324u00", state_conncted: true, set_sub_factor: 2 },
+      { device_id: "sbcd8noinoin33328u21", state_conncted: false, set_sub_factors: [0] },
+      { device_id: "sbcd8noinoin33328u22", state_conncted: true, set_sub_factors: [1] },
+      { device_id: "sbcd8noinoin33324u00", state_conncted: true, set_sub_factors: [2] },
    ]
 }
 ```
@@ -83,7 +83,7 @@ set_sub_factor // unqiue sub_factor assigned to a client device
 assert( ( message_index % set_device_count ) === set_sub_factor )
 ```
 
-##### `client_device1`'s message table
+###### `client_device1`'s message table
 
 `set_sub_factor = 0`
 
@@ -92,14 +92,50 @@ assert( ( message_index % set_device_count ) === set_sub_factor )
 | 3 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...100>` |
 | 6 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
 
-##### `client_device1`'s message table
+###### `client_device2`'s message table
+
+`set_sub_factor = 1`
+
 | message_index | reciver_id | sender_id | data |
 |--|--|--|--|
 | 1 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...400>` |
 | 4 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...230>` |
 
-##### `client_device1`'s message table
+###### `client_device3`'s message table
+
+`set_sub_factor = 2`
+
 | message_index | reciver_id | sender_id | data |
 |--|--|--|--|
 | 2 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
 | 5 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...550>` |
+
+##### *If* `client_device3` goes offline for more than a `offline_threshold` limit before reciving the above messages
+
+In this scenario, the load of `client_device3` is moved, either to `client_device2` or `client_device3` based on their availability or any other suitable strategy.
+
+So lets assume our asserted stretegy diverts the load of `client_device3` to `client_device2`. Then the table of recived messages would look like.
+
+###### `client_device1`'s message table
+
+`set_sub_factor = 0`
+
+| message_index | reciver_id | sender_id | data |
+|--|--|--|--|
+| 3 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...100>` |
+| 6 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
+
+###### `client_device2`'s message table
+
+`set_sub_factor = 1, 2`
+
+| message_index | reciver_id | sender_id | data |
+|--|--|--|--|
+| 1 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...400>` |
+| 2 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...430>` |
+| 4 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...230>` |
+| 5 | abcd88u21noinoin3332  | abcd88u21noinoin8787 | `<Buffer...550>` |
+
+
+
+
