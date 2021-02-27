@@ -49,7 +49,7 @@ client_device3 = {
 client = {
    client_id: "abcd88u21noinoin3332",
    devices: [
-      { device_id: "sbcd8noinoin33328u21", state_conncted: false, set_sub_factors: [0] },
+      { device_id: "sbcd8noinoin33328u21", state_conncted: true, set_sub_factors: [0] },
       { device_id: "sbcd8noinoin33328u22", state_conncted: true, set_sub_factors: [1] },
       { device_id: "sbcd8noinoin33324u00", state_conncted: true, set_sub_factors: [2] },
    ]
@@ -115,6 +115,18 @@ assert( ( message_index % set_device_count ) === set_sub_factor )
 In this scenario, the load of `client_device3` is moved, either to `client_device2` or `client_device3` based on their availability or any other suitable strategy.
 
 So lets assume our asserted stretegy diverts the load of `client_device3` to `client_device2`. Then the table of recived messages would look like.
+
+```js
+//Client Device set represented on client document
+client = {
+   client_id: "abcd88u21noinoin3332",
+   devices: [
+      { device_id: "sbcd8noinoin33328u21", state_conncted: true, set_sub_factors: [0] },
+      { device_id: "sbcd8noinoin33328u22", state_conncted: true, set_sub_factors: [1,2] },
+      { device_id: "sbcd8noinoin33324u00", state_conncted: false, set_sub_factors: [] },
+   ]
+}
+```
 
 ###### `client_device1`'s message table
 
