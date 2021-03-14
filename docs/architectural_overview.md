@@ -89,10 +89,6 @@ Message Storage System is component operated by MDS, to store message locally cl
 
  - Store and read messages in **client device**
  - Store and read messages from **Master Less DB**.
- 
-
-## Backend Components
-
 
 
 ## Backend Components
