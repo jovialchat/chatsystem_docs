@@ -93,14 +93,31 @@ Message Storage System is component operated by MDS, to store message locally cl
 
 ## Backend Components
 
+
+
+## Backend Components
+
 ### UMS server
 
-**User Management System Server** is an operational server of UMS.
+**User Management System Server** is an operational server of the UMS. The ports of UMS server support REST API call to allow the user to access the system's UMS.
 
 ### MDS server
+
+**Message Delivery System Server** is an operational server of the MDS. The user can connect to the MDS port with WebSocket or raw TCP connection with MDS Server.
+
 ### FSS server
+
+**File Store System Server** is an operational server of the FSS. The user can store and retrieve files in FSS using Rest API calls conventionally and also use WebSocket or raw TCP depending on the use-case of a file & devices.
+
 ### MongoDB Document Database
+
+**MongoDB** is a NoSQL Document Database. A MongoDB instance can have multiple databases, a database has multiple collections, and collection stores multiple documents indexed as a B+ Tree.
+MongoDB supports shredding in a strict Master-Slave architecture and guarantees ACID-compliant operation at the level of a single document.
+
+Here we store some essential user data and most important message receiving index. `message_index` is used to ensure serial unique identification of message which are stored in the table of a Masterless Database.
+
 ### CassandraDB Masterless Database
+
 
 
 ## Frontend Components
