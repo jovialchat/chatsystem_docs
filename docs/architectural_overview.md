@@ -115,10 +115,13 @@ Here we store some essential user data and most important message receiving inde
 ### CassandraDB Masterless Database
 
 
-
 ## Frontend Components
 
 ### MDS client
+**Message Delivery System Client** queues messages locally and sends them to the MDS server in presence of the network. All client Devices will have MDS as per their respective environments.
+
 ### Local MSS
+**Local Message Storage System** stores messages sent and received by the client on the client's device. The messages are stored with a local index and receiver's message index.
+
 ### Local Triggers
 ### Client Application
